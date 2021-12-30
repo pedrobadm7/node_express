@@ -14,7 +14,7 @@ client.connect();
 
 /* Função responsável para executar queries no banco de dados, a query
 executada abaixo pega todas as informações da tabela contacts */
-exports.query = async (query) => {
-  const { rows } = await client.query(query);
+exports.query = async (query, values) => {
+  const { rows } = await client.query(query, values);
   return rows;
 };
